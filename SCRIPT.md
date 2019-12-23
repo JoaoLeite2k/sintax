@@ -14,7 +14,9 @@ read numero
 if [ "$numero" -lt "50" ];then
 
 echo "O numero eh menor que 50"
+
 else
+
 echo "O numero eh maior (ou igual) que 50"
 
 fi
