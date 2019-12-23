@@ -1,0 +1,84 @@
+#!bin/sh
+
+#Script de sintaxe dos Comparadores Alfanumerico
+#               Comparadores:
+#		=       TEXTO É IGUAL A
+#		!=	TEXTO É DIFERENTE
+#		-n 	TEXTO NÃO NULO (só é executavel caso a variável NÃO ESTEJA vazia)
+#		-z	TEXTO NULO (só é executavel caso a variável ESTEJA vazia)
+
+
+
+clear
+date
+#Script tosco, mas é só pela sintaxe
+
+echo "Script de demonstração da sintaxe de comparadores alfanumericos"
+echo "1. Comparadores = e !="
+echo "2. Comparadores -z e -n"
+read escolha
+
+if [ "$escolha" = "1" ];then
+
+	clear
+	echo "Utilizando = e !="
+	echo "Digite uma palavra"
+	read palavra1
+	echo "Digite outra palavra"
+	read palavra2
+
+		if [ "$palavra1" = "$palavra2" ];then
+		echo "As palavras são iguais"
+		#Caso utilize o if/else, o else seria posto aqui
+		fi
+
+		if [ "$palavra1" != "palavra2" ];then		#Utilizando o if/else, não existiria esse 2º if
+		echo "As palavras não são iguais"
+		fi
+
+fi
+
+
+
+#Deixando o script menos feio
+#sleep 2
+#echo Iniciando script de comparativos alfanumericos (-z e -n)"
+#echo ..."
+#sleep 2
+#clear
+#echo Script de comparativos alfanumericos -z e -n iniciado"
+#sleep 2
+#clear
+#date
+#Frescurinha acima
+
+#Utilizando -z e -n
+
+if [ "$escolha" = "2" ];then
+
+	echo "Você deseja declarar algum valor a variavel? [s/n]"
+	read resp
+
+		if [ "$resp" = "s" ];then
+		echo "Digite uma palavra"
+		read variavel
+ 			if [ -n "$variavel" ];then #Caso a variavel não esteja vazia
+			echo "O valor dada a variavel é $variavel"
+ 			fi
+		fi
+
+		if [ "$resp" = "n" ];then #Caso a variavel esteja vazia
+ 			if [ -z "$variavel" ];then
+			echo "A variavel está vazia"
+ 			fi
+		fi
+fi
+sleep 2
+clear
+echo "Saindo do script"
+sleep 2
+
+
+
+
+
